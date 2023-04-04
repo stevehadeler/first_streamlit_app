@@ -34,8 +34,7 @@ try:
     fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
     # display dataframe
     streamlit.dataframe(fruityvice_normalized)
-except:
-  URLError as e:
+except URLError as e:
     streamlit.error()
 streamlit.stop()
 
@@ -48,6 +47,4 @@ my_data_rows = my_cur.fetchall()
 streamlit.dataframe(my_data_rows)
 add_my_fruit = streamlit.text_input('What fruit would you like to add?')
 streamlit.text('Thanks for adding ' + add_my_fruit)
-
-streamlit.write('go fuck yourself amy')
 
